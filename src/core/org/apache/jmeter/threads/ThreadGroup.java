@@ -80,6 +80,7 @@ public class ThreadGroup extends AbstractThreadGroup {
     private transient Object addThreadLock = new Object();
 
     /** Is test (still) running? */
+    /*volatile修饰running是共享变量，多线程操作时会有锁的作用，保证修改对所有线程都是可见的*/
     private volatile boolean running = false;
 
     /** Thread Group number */
